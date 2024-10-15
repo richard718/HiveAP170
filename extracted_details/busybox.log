@@ -1,0 +1,34 @@
+BusyBox v1.18.3 (2011-07-11 10:56:16 PDT) multi-call binary.
+Copyright (C) 1998-2009 Erik Andersen, Rob Landley, Denys Vlasenko
+and others. Licensed under GPLv2.
+See source distribution for full notice.
+
+Usage: busybox [function] [arguments]...
+   or: busybox --list[-full]
+   or: function [arguments]...
+
+	BusyBox is a multi-call binary that combines many common Unix
+	utilities into a single executable.  Most people will create a
+	link to busybox for each function they wish to use and BusyBox
+	will act like whatever it was invoked as.
+
+Currently defined functions:
+	[, [[, addgroup, adduser, arp, arping, ash, awk, basename, blockdev,
+	brctl, bzip2, cat, chgrp, chmod, chown, chpasswd, chroot, clear, cmp,
+	cp, cut, date, dd, delgroup, deluser, depmod, df, dhcprelay, diff,
+	dirname, dmesg, dnsdomainname, du, echo, egrep, env, expr, fdisk,
+	fgrep, find, fold, free, fsync, getopt, getty, grep, gunzip, gzip,
+	halt, hd, head, hexdump, hostid, hostname, id, ifconfig, ifdown, ifup,
+	inetd, init, insmod, install, kill, killall, klogd, last, length, less,
+	linuxrc, ln, logger, login, logname, ls, lsmod, lsusb, md5sum, mkdir,
+	mke2fs, mkfs.ext2, mknod, mktemp, modinfo, modprobe, more, mount,
+	mountpoint, mv, nc, netstat, nslookup, passwd, patch, pgrep, pidof,
+	ping, poweroff, printenv, printf, ps, pwd, realpath, reboot, reset,
+	resize, rm, rmdir, rmmod, route, run-parts, sed, seq, setlogcons,
+	setsid, sh, showkey, sleep, sort, split, start-stop-daemon, stat, stty,
+	su, sum, sync, sysctl, syslogd, tail, tar, tee, telnet, telnetd, test,
+	time, top, touch, tr, traceroute, tty, tunctl, tune2fs, udhcpc, udhcpd,
+	umount, uname, unzip, uptime, usleep, vi, watch, wc, wget, which, who,
+	whoami, zcat
+
+

